@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+</head>
+
+<nav class="flex items-center justify-between flex-wrap bg-teal p-6">
+    <div class="flex items-center flex-no-shrink text-white mr-6">
+      <svg class="h-8 w-8 mr-2" width="54" height="54" viewBox="0 0 54 54" xmlns="https://upload.wikimedia.org/wikipedia/commons/thumb/1/10/Userbox_creeper.svg/1200px-Userbox_creeper.svg.png"><path d="M13.5 22.1c1.8-7.2 6.3-10.8 13.5-10.8 10.8 0 12.15 8.1 17.55 9.45 3.6.9 6.75-.45 9.45-4.05-1.8 7.2-6.3 10.8-13.5 10.8-10.8 0-12.15-8.1-17.55-9.45-3.6-.9-6.75.45-9.45 4.05zM0 38.3c1.8-7.2 6.3-10.8 13.5-10.8 10.8 0 12.15 8.1 17.55 9.45 3.6.9 6.75-.45 9.45-4.05-1.8 7.2-6.3 10.8-13.5 10.8-10.8 0-12.15-8.1-17.55-9.45-3.6-.9-6.75.45-9.45 4.05z"/></svg>
+      <span class="font-semibold text-xl tracking-tight text-black">Music Instruments</span>
+    </div>
+    <div class="block lg:hidden">
+      <button class="flex items-center px-3 py-2 border rounded text-teal-lighter border-teal-light hover:text-white hover:border-white">
+        <svg class="h-3 w-3" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><title>Menu</title><path d="M0 3h20v2H0V3zm0 6h20v2H0V9zm0 6h20v2H0v-2z"/></svg>
+      </button>
+    </div>
+    <div class="w-full block flex-grow lg:flex lg:items-center lg:w-auto">
+      <div class="text-sm lg:flex-grow">
+        <a href="" class="block mt-4 lg:inline-block lg:mt-0 text-teal-lighter transition ease-in-out hover:scale-110 delay-100 mr-4">
+          Home
+        </a>
+        <a href="" class="block mt-4 lg:inline-block lg:mt-0 text-teal-lighter transition ease-in-out hover:scale-110 delay-100  mr-4">
+          Seller Centre
+        </a>
+        <a href="" class="block mt-4 lg:inline-block lg:mt-0 text-teal-lighter transition ease-in-out hover:scale-110 delay-100 mr-4">
+          Cart
+        </a>
+         <a href="" class="block mt-4 lg:inline-block lg:mt-0 text-teal-lighter transition ease-in-out hover:scale-110 delay-100 mr-4">
+           Customer Care
+        </a>
+        <a href="" class="block mt-4 lg:inline-block lg:mt-0 text-teal-lighter transition ease-in-out hover:scale-110 delay-100 ">
+            Track my order
+         </a>
+        
+
+
+      </div>
+      <div>
+        <a href="#" class="inline-block text-sm px-4 py-2 leading-none border rounded text-white border-white hover:border-transparent hover:text-teal hover:bg-white mt-4 lg:mt-0">Download</a>
+      </div>
+    </div>
+  </nav>
+
+<div class="text-cyan-900 p-1 bg-slate-100">
+    <div class="container mx-auto grid grid-cols-4 gap-4 content-start p-0 m-65 my-8">
+        <% for(var index=0; index < itemData.length; index++) { %>
+        <div class="transition ease-in-out hover:scale-105 delay-100 p-10 inline-block w-38 h-50 bg-white rounded-lg border border-gray-200 text-black">
+            <img class="rounded-t-lg" src='<%= itemData[index].data()['photoUrl']%>'></img>
+            <a href="#"><h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 text-black text-sm"><%= itemData[index].data()['name'] %> </h5></a>
+            <h1 class="font-normal  text-black">₱ <%= itemData[index].data()['price'] %>.00  </h1>
+            <p class="p-3"></p>
+            <p></p>
+           <a href="/item/<%= itemData[index].id %>" class="transition ease-in-out delay-110 flex flex-col items-center h-10 py-2 px-3 text-sm font-medium text-center text-white bg-gray-800 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-gray-800 dark:hover:bg-gray-900 dark:focus:ring-gray-800">View Item</a>
+        </div>
+   <% } %>
+</div>
+</div>
+
+
+
+<script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        .card {
+            height: 360px;
+            display: inline-flex;
+            flex-direction: row;
+            border: 2px solid black;
+            flex-wrap: initial;
+            border-radius: 20px;
+            width: 400px;
+        }
+        img{
+            height: 220px;
+            width: 240px;
+        }
+        
+    </style>
+</body>
+
+</html>
